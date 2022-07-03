@@ -66,4 +66,4 @@ Se expone el servicio  [https://mutant-2022.herokuapp.com/api/stats](https://mut
 ADN: {“count_mutant_dna”:40, “count_human_dna”:100: “ratio”:0.4}
 ``
 
-### La aplicación se desarrollo con java usando spring boot, la base de daos es postgreSQL. 
+ -> La aplicación se desarrollo con java usando spring boot, la base de datos es postgreSQL. 
