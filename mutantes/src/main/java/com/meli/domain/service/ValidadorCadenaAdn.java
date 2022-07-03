@@ -9,24 +9,30 @@ import java.util.stream.Stream;
 
 public class ValidadorCadenaAdn {
 
-    private static final String PATRON = "CCCC|TTTT|GGGG|AAAA";
-    private final Pattern pattern = Pattern.compile(PATRON);
+    private static final String PATRON_SECUENCIAS = "CCCC|TTTT|GGGG|AAAA";
+    private static final String PATRON_MATRIX_VALIDA = "[^ACTG]";
+    private final Pattern pattern = Pattern.compile(PATRON_SECUENCIAS);
+    private final Pattern patternValidacion = Pattern.compile(PATRON_MATRIX_VALIDA);
 
     public boolean validarSecuencia(String[] matrixAdn) {
         long coincidencias = 0L;
-        coincidencias += buscarAdn(matrixAdn);
+
+         if (buscarAdn(matrixAdn, patternValidacion) > 0)
+             throw new IllegalArgumentException("La matriz contiene caracteres invalidos");
+
+        coincidencias += buscarAdn(matrixAdn, pattern);
         if (coincidencias<2) {
-            coincidencias += buscarAdn(transponerMatrix(matrixAdn));
+            coincidencias += buscarAdn(transponerMatrix(matrixAdn), pattern);
             if (coincidencias < 2)
-                coincidencias += buscarAdn(diagonales(matrixAdn));
+                coincidencias += buscarAdn(diagonales(matrixAdn), pattern);
         }
         return (coincidencias > 1);
     }
 
     //busca la occurrencia  de las secuencias mutantes en la matrix
-    private long buscarAdn(String[] matrix) {
+    private long buscarAdn(String[] matrix, Pattern patron) {
         return Stream.of(matrix)
-                .map(x -> new Scanner(x).findAll(pattern)
+                .map(x -> new Scanner(x).findAll(patron)
                         .map(m -> m.group())
                         .collect(Collectors.toList())
                 )
