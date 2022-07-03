@@ -4,8 +4,7 @@
 Magneto quiere reclutar la mayor cantidad de mutantes para poder luchar
 contra los X-Men.
 
-Para eso te ha pedido crear un programa con un método o función con la siguiente firma (En
-alguno de los siguiente lenguajes Java
+Para eso te ha pedido crear un programa con un método o función con la siguiente firma 
 
 ``
  boolean isMutant(String[] dna); 
@@ -66,3 +65,5 @@ Se expone el servicio  [https://mutant-2022.herokuapp.com/api/stats](https://mut
 ``
 ADN: {“count_mutant_dna”:40, “count_human_dna”:100: “ratio”:0.4}
 ``
+
+La aplicació se desarrolo con java usando spring boot, la base de daos es postgres. 
