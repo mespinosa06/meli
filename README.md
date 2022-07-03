@@ -41,7 +41,7 @@ En esta clase tiene los siguientes métodos:
 ```ruby
 validarSecuencia: método púbico que orquesta la evaluación de las secuencias de ADN.
 buscarAd: busca las secuencias mutantes en el ADN
-transponerMatrix: retorna la matrix transpuesta. 
+transponerMatrix: retorna la matrix transpuesta (se usa para las busquedas verticales)
 diagonales: retorna las diagonales de una matrix.
 ```
 
@@ -56,6 +56,7 @@ POST → /mutant
 “dna”:["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]
 }
 ``
+
 El servicio devuelve un HTTP 200-OK, en caso contrario un 403-Forbidden.
 
 ## Nivel 3:
