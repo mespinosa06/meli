@@ -38,11 +38,11 @@ ValidadorCadenaAdn.java
 
 En esta clase tiene los siguientes métodos:
 
-```ruby
-validarSecuencia: método púbico que orquesta la evaluación de las secuencias de ADN.
-buscarAd: busca las secuencias mutantes en el ADN
-transponerMatrix: retorna la matrix transpuesta (se usa para las busquedas verticales)
-diagonales: retorna las diagonales de una matrix.
+```
+1. validarSecuencia: método púbico que orquesta la evaluación de las secuencias de ADN.
+2. buscarAd: busca las secuencias mutantes en el ADN
+3. transponerMatrix: retorna la matrix transpuesta (se usa para las busquedas verticales)
+4. diagonales: retorna las diagonales de una matrix.
 ```
 
 
